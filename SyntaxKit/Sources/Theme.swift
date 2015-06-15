@@ -9,31 +9,6 @@
 import Foundation
 
 public struct Theme {
-//	#pragma mark - Factory
-//
-//	+ (instancetype)themeWithName:(NSString *)name {
-//	if (!name) {
-//	return nil;
-//	}
-//
-//	static NSCache *themeCache;
-//	static dispatch_once_t onceToken;
-//	dispatch_once(&onceToken, ^{
-//	themeCache = [[NSCache alloc] init];
-//	});
-//
-//	SYNTheme *theme = [themeCache objectForKey:name];
-//	if (!theme) {
-//	NSString *path = [[NSBundle bundleWithIdentifier:@"com.nothingmagical.syntaxkit"] pathForResource:name ofType:@"tmTheme"];
-//	NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-//	if (data) {
-//	NSDictionary *dictionary = [NSPropertyListSerialization propertyListWithData:data options:(NSPropertyListReadOptions)kNilOptions format:nil error:nil];
-//	theme = [[SYNTheme alloc] initWithDictionary:dictionary];
-//	[themeCache setObject:theme forKey:name];
-//	}
-//	}
-//	return theme;
-//	}
 
 	// MARK: - Properties
 

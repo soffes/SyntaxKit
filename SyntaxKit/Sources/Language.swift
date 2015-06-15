@@ -8,50 +8,7 @@
 
 import Foundation
 
-typealias Repository = [String: Pattern]
-
 public struct Language {
-//	#pragma mark - Factory
-//
-//	+ (instancetype)languageWithName:(NSString *)name {
-//	if (!name) {
-//	return nil;
-//	}
-//
-//	static NSCache *languageCache;
-//	static dispatch_once_t onceToken;
-//	dispatch_once(&onceToken, ^{
-//	languageCache = [[NSCache alloc] init];
-//	});
-//
-//	NSDictionary *mapping = [languageCache objectForKey:@"_mapping"];
-//	if (!mapping) {
-//	NSString *path = [[NSBundle bundleWithIdentifier:@"com.nothingmagical.syntaxkit"] pathForResource:@"LanguageMap" ofType:@"plist"];
-//	NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-//	if (data) {
-//	mapping = [NSPropertyListSerialization propertyListWithData:data options:(NSPropertyListReadOptions)kNilOptions format:nil error:nil];
-//	[languageCache setObject:mapping forKey:@"_mapping"];
-//	}
-//	}
-//
-//	NSString *fileName = mapping[name];
-//	if (!fileName) {
-//	fileName = name;
-//	}
-//
-//	SYNLanguage *language = [languageCache objectForKey:fileName];
-//	if (!language) {
-//	NSString *path = [[NSBundle bundleWithIdentifier:@"com.nothingmagical.syntaxkit"] pathForResource:fileName ofType:@"tmLanguage"];
-//	NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-//	if (data) {
-//	NSDictionary *dictionary = [NSPropertyListSerialization propertyListWithData:data options:(NSPropertyListReadOptions)kNilOptions format:nil error:nil];
-//	language = [[SYNLanguage alloc] initWithDictionary:dictionary];
-//	[languageCache setObject:language forKey:fileName];
-//	}
-//	}
-//	return language;
-//	}
-
 
 	// MARK: - Properties
 
