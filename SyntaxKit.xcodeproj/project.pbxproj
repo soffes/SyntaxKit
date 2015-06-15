@@ -86,13 +86,9 @@
 				210299CB1B2E8924009C61EE /* SyntaxKit.h */,
 				210299C81B2E8924009C61EE /* Parser.swift */,
 				210299C41B2E8924009C61EE /* AttributedParser.swift */,
-				210299C51B2E8924009C61EE /* Capture.swift */,
-				210299C61B2E8924009C61EE /* CaptureCollection.swift */,
 				210299C71B2E8924009C61EE /* Language.swift */,
-				210299C91B2E8924009C61EE /* Pattern.swift */,
-				210299CA1B2E8924009C61EE /* Result.swift */,
-				210299E71B2E929C009C61EE /* ResultSet.swift */,
 				210299CC1B2E8924009C61EE /* Theme.swift */,
+				2119897B1B2E99CC00F0D786 /* Internal */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -122,6 +118,18 @@
 				210299E31B2E8AFC009C61EE /* YAML.plist */,
 			);
 			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		2119897B1B2E99CC00F0D786 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				210299C91B2E8924009C61EE /* Pattern.swift */,
+				210299C51B2E8924009C61EE /* Capture.swift */,
+				210299C61B2E8924009C61EE /* CaptureCollection.swift */,
+				210299CA1B2E8924009C61EE /* Result.swift */,
+				210299E71B2E929C009C61EE /* ResultSet.swift */,
+			);
+			name = Internal;
 			sourceTree = "<group>";
 		};
 		2122A6D41B22B9320006409B = {

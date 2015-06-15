@@ -2,13 +2,24 @@
 //  Result.swift
 //  SyntaxKit
 //
-//  Created by Sam Soffes on 6/5/15.
-//  Copyright (c) 2015 Sam Soffes. All rights reserved.
+//  Created by Sam Soffes on 10/11/14.
+//  Copyright © 2014-2015 Sam Soffes. All rights reserved.
 //
 
 import Foundation
 
-public struct Result {
-	public let scope: String
-	public let range: NSRange
+struct Result {
+
+	// MARK: - Properties
+
+	let scope: String
+	let range: NSRange
+
+
+	// MARK: - Initializers
+
+	init(scope: String, range: NSRange) {
+		self.scope = scope
+		self.range = range
+	}
 }

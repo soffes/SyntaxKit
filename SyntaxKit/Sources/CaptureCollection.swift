@@ -2,19 +2,19 @@
 //  CaptureCollection.swift
 //  SyntaxKit
 //
-//  Created by Sam Soffes on 6/5/15.
-//  Copyright (c) 2015 Sam Soffes. All rights reserved.
+//  Created by Sam Soffes on 9/19/14.
+//  Copyright © 2014-2015 Sam Soffes. All rights reserved.
 //
 
 import Foundation
 
-public struct CaptureCollection {
+struct CaptureCollection {
 
 	// MARK: - Properties
 
 	private let captures: [UInt: Capture]
 
-	public var captureIndexes: [UInt] {
+	var captureIndexes: [UInt] {
 		var keys = captures.keys.array
 		keys.sortInPlace() { $0 < $1 }
 		return keys
@@ -23,7 +23,7 @@ public struct CaptureCollection {
 
 	// MARK: - Initializers
 
-	public init?(dictionary: [NSObject: AnyObject]) {
+	init?(dictionary: [NSObject: AnyObject]) {
 		guard let dictionary = dictionary as? [String: [String: String]]  else { return nil }
 
 		var captures = [UInt: Capture]()
@@ -38,7 +38,7 @@ public struct CaptureCollection {
 
 	// MARK: - Accessing Captures
 
-	public subscript(index: UInt) -> Capture? {
+	subscript(index: UInt) -> Capture? {
 		return captures[index]
 	}
 }

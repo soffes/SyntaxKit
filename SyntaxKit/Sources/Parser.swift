@@ -2,8 +2,8 @@
 //  Parser.swift
 //  SyntaxKit
 //
-//  Created by Sam Soffes on 6/5/15.
-//  Copyright (c) 2015 Sam Soffes. All rights reserved.
+//  Created by Sam Soffes on 9/19/14.
+//  Copyright © 2014-2015 Sam Soffes. All rights reserved.
 //
 
 import Foundation
@@ -66,35 +66,29 @@ public class Parser {
 				} else {
 					continue
 				}
+			}
 
-//		// Begin & end
-//		if (pattern.begin && pattern.end) {
-//		SYNResultSet *begin = [self parse:string inRange:bounds scope:nil expression:pattern.begin captures:pattern.beginCaptures];
-//		if (!begin) {
-//		continue;
-//		}
-//
-//		NSRange endRange = bounds;
-//		endRange.location = NSMaxRange(begin.range);
-//		endRange.length -= endRange.location - bounds.location;
-//
-//		SYNResultSet *end = [self parse:string inRange:endRange scope:nil expression:pattern.end captures:pattern.endCaptures];
-//		if (!end) {
-//		// TODO: Rewind?
-//		continue;
-//		}
-//
-//		SYNResultSet *resultSet = [[SYNResultSet alloc] init];
-//
-//		// Add whole scope before start and end
-//		if (pattern.name) {
-//		[resultSet addResultWithScope:pattern.name range:NSUnionRange(begin.range, end.range)];
-//		}
-//
-//		[resultSet addResultsFromResultSet:begin];
-//		[resultSet addResultsFromResultSet:end];
-//
-//		return [self applyResults:resultSet callback:callback];
+			// Begin & end
+			if let begin = pattern.begin, end = pattern.end {
+				guard let beginResults = parse(string, inRange: bounds, expression: begin, captures: pattern.beginCaptures),
+					beginRange = beginResults.range else { continue }
+
+				let location = NSMaxRange(beginRange)
+				let endBounds = NSMakeRange(location, bounds.length - location - bounds.location)
+
+				guard let endResults = parse(string, inRange: endBounds, expression: end, captures: pattern.endCaptures),
+					endRange = endResults.range else { /* TODO: Rewind? */ continue }
+
+				// Add whole scope before start and end
+				var results = ResultSet()
+				if let name = pattern.name {
+					results.addResult(Result(scope: name, range: NSUnionRange(beginRange, endRange)))
+				}
+
+				results.addResults(beginResults)
+				results.addResults(endResults)
+
+				return applyResults(results, callback: callback)
 			}
 		}
 
@@ -102,7 +96,7 @@ public class Parser {
 	}
 
 	/// Parse an expression with captures
-	private func parse(string: String, inRange bounds: NSRange, scope: String, expression expressionString: String, captures: CaptureCollection?) -> ResultSet? {
+	private func parse(string: String, inRange bounds: NSRange, scope: String? = nil, expression expressionString: String, captures: CaptureCollection?) -> ResultSet? {
 //		NSRegularExpression *expression = [[NSRegularExpression alloc] initWithPattern:pattern options:NSRegularExpressionAnchorsMatchLines error:nil];
 //		NSArray *matches = [expression matchesInString:string options:kNilOptions range:bounds];
 //		NSTextCheckingResult *result = [matches firstObject];
@@ -133,11 +127,11 @@ public class Parser {
 	}
 
 	private func applyResults(resultSet: ResultSet, callback: Callback) -> UInt {
-		let max: UInt = 0
-//		for result in resultSet.results {
-//			callback(result.scope, result.range)
-//			max = max(NSMaxRange(result.range), max)
-//		}
-		return max
+		var i = 0
+		for result in resultSet.results {
+			callback(scope: result.scope, range: result.range)
+			i = max(NSMaxRange(result.range), i)
+		}
+		return UInt(i)
 	}
 }
