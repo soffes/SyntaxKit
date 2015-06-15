@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SyntaxKit
+import SyntaxKit
 
 class LanguageTests: XCTestCase {
 

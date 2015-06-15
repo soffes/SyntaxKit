@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Pattern {
+public final class Pattern {
 //	+ (instancetype)patternWithDictionary:(NSDictionary *)dictionary language:(SYNLanguage *)language {
 //	NSString *include = dictionary[@"include"];
 //	if (include) {
@@ -22,25 +22,25 @@ final class Pattern {
 
 	// MARK: - Properties
 
-	let name: String
-	let match: String?
-	let beginCaptures: CaptureCollection?
-	let captures: CaptureCollection?
-	let endCaptures: CaptureCollection?
+	public let name: String
+	public let match: String?
+	public let beginCaptures: CaptureCollection?
+	public let captures: CaptureCollection?
+	public let endCaptures: CaptureCollection?
 	private weak var parent: Pattern?
 	private let patterns: [Pattern]
 
-	var superpattern: Pattern? {
+	public var superpattern: Pattern? {
 		return parent
 	}
 
-	var subpatterns: [Pattern] {
+	public var subpatterns: [Pattern] {
 		return patterns
 	}
 
 	// MARK: - Initializers
 
-	init?(dictionary: [NSObject: AnyObject], parent: Pattern? = nil) {
+	public init?(dictionary: [NSObject: AnyObject], parent: Pattern? = nil) {
 		guard let name = dictionary["name"] as? String else {
 			self.name = ""
 			self.match = nil

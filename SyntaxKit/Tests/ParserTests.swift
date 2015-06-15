@@ -7,8 +7,28 @@
 //
 
 import XCTest
+import SyntaxKit
 
 class SyntaxKitTests: XCTestCase {
+
+	// MARK: - Properties
+
+	let yaml: Language = {
+		let path = NSBundle(forClass: LanguageTests.self).pathForResource("YAML", ofType: "plist")!
+		let plist = NSDictionary(contentsOfFile: path)! as [NSObject: AnyObject]
+		return Language(dictionary: plist)!
+	}()
+
+	var parser: AttributedParser!
+
+
+	// MARK: - XCTestCase
+
+	override func setUp() {
+		super.setUp()
+		parser = AttributedParser(language: yaml)
+	}
+
 //	- (void)setUp {
 //	[super setUp];
 //	self.parser = [[SYNAttributedParser alloc] initWithLanguageName:@"yaml"];

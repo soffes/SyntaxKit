@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias Repository = [String: Pattern]
+public typealias Repository = [String: Pattern]
 
-struct Language {
+public struct Language {
 //	#pragma mark - Factory
 //
 //	+ (instancetype)languageWithName:(NSString *)name {
@@ -55,15 +55,15 @@ struct Language {
 
 	// MARK: - Properties
 
-	let UUID: String
-	let name: String
-	let scopeName: String
-	let patterns: [Pattern]
+	public let UUID: String
+	public let name: String
+	public let scopeName: String
+	public let patterns: [Pattern]
 
 
 	// MARK: - Initializers
 
-	init?(dictionary: [NSObject: AnyObject]) {
+	public init?(dictionary: [NSObject: AnyObject]) {
 		guard let UUID = dictionary["uuid"] as? String,
 			name = dictionary["name"] as? String,
 			scopeName = dictionary["scopeName"] as? String

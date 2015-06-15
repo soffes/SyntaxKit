@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Theme {
+public struct Theme {
 //	#pragma mark - Factory
 //
 //	+ (instancetype)themeWithName:(NSString *)name {
@@ -37,14 +37,14 @@ struct Theme {
 
 	// MARK: - Properties
 
-	let UUID: String
-	let name: String
-	let settings: [String: AnyObject]
+	public let UUID: String
+	public let name: String
+	public let settings: [String: AnyObject]
 
 
 	// MARK: - Initializers
 
-	init?(dictionary: [NSObject: AnyObject]) {
+	public init?(dictionary: [NSObject: AnyObject]) {
 		guard let UUID = dictionary["uuid"] as? String,
 			name = dictionary["name"] as? String,
 			settings = dictionary["settings"] as? [String: AnyObject]

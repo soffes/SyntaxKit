@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct CaptureCollection {
+public struct CaptureCollection {
 
 	// MARK: - Properties
 
 	private let captures: [UInt: Capture]
 
-	var captureIndexes: [UInt] {
+	public var captureIndexes: [UInt] {
 		var keys = captures.keys.array
 		keys.sortInPlace() { $0 < $1 }
 		return keys
@@ -23,7 +23,7 @@ struct CaptureCollection {
 
 	// MARK: - Initializers
 
-	init?(dictionary: [NSObject: AnyObject]) {
+	public init?(dictionary: [NSObject: AnyObject]) {
 		guard let dictionary = dictionary as? [String: [String: String]]  else { return nil }
 
 		var captures = [UInt: Capture]()
@@ -38,7 +38,7 @@ struct CaptureCollection {
 
 	// MARK: - Accessing Captures
 
-	subscript(index: UInt) -> Capture? {
+	public subscript(index: UInt) -> Capture? {
 		return captures[index]
 	}
 }

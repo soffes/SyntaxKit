@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Result {
-	let scope: String
-	let range: NSRange
+public struct Result {
+	public let scope: String
+	public let range: NSRange
 }

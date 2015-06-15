@@ -8,10 +8,16 @@
 
 import Foundation
 
-struct Capture {
-	let name: String
+public struct Capture {
 
-	init?(dictionary: [NSObject: AnyObject]) {
+	// MARK: - Properties
+
+	public let name: String
+
+
+	// MARK: - Initializers
+	
+	public init?(dictionary: [NSObject: AnyObject]) {
 		guard let name = dictionary["name"] as? String else { return nil }
 		self.name = name
 	}
