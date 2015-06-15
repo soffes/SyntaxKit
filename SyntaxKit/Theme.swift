@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Sam Soffes. All rights reserved.
 //
 
+import Foundation
+
 struct Theme {
 //	#pragma mark - Factory
 //
@@ -43,12 +45,13 @@ struct Theme {
 	// MARK: - Initializers
 
 	init?(dictionary: [NSObject: AnyObject]) {
-		if let UUID = dictionary["uuid"] as? String, name = dictionary["name"] as? String, settings = dictionary["settings"] as? [String: AnyObject] {
-			self.UUID = UUID
-			self.name = name
-			self.settings = settings
-		} else {
-			return nil
-		}
+		guard let UUID = dictionary["uuid"] as? String,
+			name = dictionary["name"] as? String,
+			settings = dictionary["settings"] as? [String: AnyObject]
+			else { return nil }
+
+		self.UUID = UUID
+		self.name = name
+		self.settings = settings
 	}
 }

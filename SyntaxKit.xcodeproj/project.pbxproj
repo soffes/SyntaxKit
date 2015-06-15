@@ -68,6 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210299C01B2E832C009C61EE /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				2122A6FF1B22BA180006409B /* Language.swift */,
+				2122A7071B22BC420006409B /* Capture.swift */,
+				2122A7011B22BA520006409B /* Pattern.swift */,
+				2122A7051B22BBDF0006409B /* CaptureCollection.swift */,
+				2122A7031B22BB520006409B /* Result.swift */,
+				2122A70D1B22BD580006409B /* Theme.swift */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
 		2122A6D41B22B9320006409B = {
 			isa = PBXGroup;
 			children = (
@@ -91,12 +104,7 @@
 				2122A6E31B22B9320006409B /* SyntaxKit.h */,
 				2122A7091B22BCBF0006409B /* Parser.swift */,
 				2122A70B1B22BD290006409B /* AttributedParser.swift */,
-				2122A6FF1B22BA180006409B /* Language.swift */,
-				2122A7071B22BC420006409B /* Capture.swift */,
-				2122A7011B22BA520006409B /* Pattern.swift */,
-				2122A7051B22BBDF0006409B /* CaptureCollection.swift */,
-				2122A7031B22BB520006409B /* Result.swift */,
-				2122A70D1B22BD580006409B /* Theme.swift */,
+				210299C01B2E832C009C61EE /* Private */,
 				2122A6E11B22B9320006409B /* Supporting Files */,
 				2122A6FA1B22B9590006409B /* Tests */,
 			);
@@ -177,6 +185,7 @@
 		2122A6D51B22B9320006409B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Sam Soffes";
 				TargetAttributes = {

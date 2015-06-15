@@ -12,10 +12,7 @@ struct Capture {
 	let name: String
 
 	init?(dictionary: [NSObject: AnyObject]) {
-		if let name = dictionary["name"] as? String {
-			self.name = name
-		} else {
-			return nil
-		}
+		guard let name = dictionary["name"] as? String else { return nil }
+		self.name = name
 	}
 }

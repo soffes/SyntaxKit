@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Sam Soffes. All rights reserved.
 //
 
+import Foundation
+
 struct CaptureCollection {
 
 	// MARK: - Properties
@@ -14,7 +16,7 @@ struct CaptureCollection {
 
 	var captureIndexes: [Int] {
 		var keys = captures.keys.array
-		keys.sort() { $0 < $1 }
+		keys.sortInPlace() { $0 < $1 }
 		return keys
 	}
 
@@ -22,17 +24,15 @@ struct CaptureCollection {
 	// MARK: - Initializers
 
 	init?(dictionary: [NSObject: AnyObject]) {
-		if let dictionary = dictionary as? [Int: [String: String]] {
-			var captures = [Int: Capture]()
-			for (key, value) in dictionary {
-				if let capture = Capture(dictionary: value) {
-					captures[key] = capture
-				}
+		guard let dictionary = dictionary as? [Int: [String: String]]  else { return nil }
+
+		var captures = [Int: Capture]()
+		for (key, value) in dictionary {
+			if let capture = Capture(dictionary: value) {
+				captures[key] = capture
 			}
-			self.captures = captures
-		} else {
-			return nil
 		}
+		self.captures = captures
 	}
 
 

@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Sam Soffes. All rights reserved.
 //
 
+import Foundation
+
 struct Language {
 //	#pragma mark - Factory
 //
@@ -47,6 +49,24 @@ struct Language {
 //	}
 //	return language;
 //	}
+
+
+	// MARK: - Properties
+
+	let UUID: String
+	let name: String
+	let scopeName: String
+
+	init?(dictionary: [NSObject: AnyObject]) {
+		guard let UUID = dictionary["uuid"] as? String,
+			name = dictionary["name"] as? String,
+			scopeName = dictionary["scopeName"] as? String
+			else { return nil }
+
+		self.UUID = UUID
+		self.name = name
+		self.scopeName = scopeName
+	}
 //
 //
 //	#pragma mark - Initializers
