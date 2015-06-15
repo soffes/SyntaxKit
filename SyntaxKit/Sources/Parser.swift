@@ -97,31 +97,37 @@ public class Parser {
 
 	/// Parse an expression with captures
 	private func parse(string: String, inRange bounds: NSRange, scope: String? = nil, expression expressionString: String, captures: CaptureCollection?) -> ResultSet? {
-//		NSRegularExpression *expression = [[NSRegularExpression alloc] initWithPattern:pattern options:NSRegularExpressionAnchorsMatchLines error:nil];
-//		NSArray *matches = [expression matchesInString:string options:kNilOptions range:bounds];
-//		NSTextCheckingResult *result = [matches firstObject];
-//		if (!result) {
-//		return nil;
-//		}
-//
-//		SYNResultSet *resultSet = [[SYNResultSet alloc] init];
-//		if (scope && result.range.location != NSNotFound) {
-//		[resultSet addResultWithScope:scope range:result.range];
-//		}
-//
-//		for (NSNumber *index in [captures captureIndexes]) {
-//		NSRange range = [result rangeAtIndex:[index integerValue]];
-//		if (range.location == NSNotFound) {
-//		continue;
-//		}
-//
-//		scope = [[captures captureAtIndex:[index integerValue]] name];
-//		[resultSet addResultWithScope:scope range:range];
-//		}
-//
-//		if (![resultSet isEmpty]) {
-//		return resultSet;
-//		}
+		let matches: [NSTextCheckingResult]
+		do {
+			let expression = try NSRegularExpression(pattern: expressionString, options: [.AnchorsMatchLines])
+			matches = expression.matchesInString(string, options: [], range: bounds)
+		} catch {
+			return nil
+		}
+
+		guard let result = matches.first else { return nil }
+
+		var resultSet = ResultSet()
+		if let scope = scope where result.range.location != NSNotFound {
+			resultSet.addResult(Result(scope: scope, range: result.range))
+		}
+
+		if let captures = captures {
+			for index in captures.captureIndexes {
+				let range = result.rangeAtIndex(Int(index))
+				if range.location == NSNotFound {
+					continue
+				}
+
+				if let scope = captures[index]?.name {
+					resultSet.addResult(Result(scope: scope, range: range))
+				}
+			}
+		}
+
+		if !resultSet.isEmpty {
+			return resultSet
+		}
 
 		return nil
 	}
