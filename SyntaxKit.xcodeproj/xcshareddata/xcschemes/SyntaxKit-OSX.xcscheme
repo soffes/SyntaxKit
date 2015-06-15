@@ -16,21 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2122A6DD1B22B9320006409B"
                BuildableName = "SyntaxKit.framework"
-               BlueprintName = "SyntaxKit"
-               ReferencedContainer = "container:SyntaxKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2122A6E81B22B9320006409B"
-               BuildableName = "SyntaxKitTests.xctest"
-               BlueprintName = "SyntaxKitTests"
+               BlueprintName = "SyntaxKit-OSX"
                ReferencedContainer = "container:SyntaxKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2122A6E81B22B9320006409B"
-               BuildableName = "SyntaxKitTests.xctest"
-               BlueprintName = "SyntaxKitTests"
+               BuildableName = "SyntaxKit-OSXTests.xctest"
+               BlueprintName = "SyntaxKit-OSXTests"
                ReferencedContainer = "container:SyntaxKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -59,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2122A6DD1B22B9320006409B"
             BuildableName = "SyntaxKit.framework"
-            BlueprintName = "SyntaxKit"
+            BlueprintName = "SyntaxKit-OSX"
             ReferencedContainer = "container:SyntaxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -81,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2122A6DD1B22B9320006409B"
             BuildableName = "SyntaxKit.framework"
-            BlueprintName = "SyntaxKit"
+            BlueprintName = "SyntaxKit-OSX"
             ReferencedContainer = "container:SyntaxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2122A6DD1B22B9320006409B"
             BuildableName = "SyntaxKit.framework"
-            BlueprintName = "SyntaxKit"
+            BlueprintName = "SyntaxKit-OSX"
             ReferencedContainer = "container:SyntaxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
