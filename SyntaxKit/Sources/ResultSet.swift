@@ -20,7 +20,7 @@ struct ResultSet {
 	var range: NSRange?
 
 	var isEmpty: Bool {
-		return results.count == 0
+		return results.isEmpty
 	}
 
 

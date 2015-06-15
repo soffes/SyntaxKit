@@ -18,8 +18,12 @@
 		210299DA1B2E8924009C61EE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299CC1B2E8924009C61EE /* Theme.swift */; };
 		210299DE1B2E892E009C61EE /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299CF1B2E8924009C61EE /* LanguageTests.swift */; };
 		210299DF1B2E892E009C61EE /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299D01B2E8924009C61EE /* ParserTests.swift */; };
-		210299E51B2E8AFC009C61EE /* YAML.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210299E31B2E8AFC009C61EE /* YAML.plist */; };
 		210299E81B2E929C009C61EE /* ResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299E71B2E929C009C61EE /* ResultSet.swift */; };
+		2119897D1B2EAAD400F0D786 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119897C1B2EAAD400F0D786 /* Color.swift */; };
+		211989801B2EAF0900F0D786 /* Tomorrow.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 2119897E1B2EAF0900F0D786 /* Tomorrow.tmTheme */; };
+		211989811B2EAF0900F0D786 /* YAML.tmLanguage in Resources */ = {isa = PBXBuildFile; fileRef = 2119897F1B2EAF0900F0D786 /* YAML.tmLanguage */; };
+		211989841B2EB18600F0D786 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211989821B2EB18000F0D786 /* TestHelper.swift */; };
+		211989871B2EB3F800F0D786 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211989851B2EB3F800F0D786 /* ColorTests.swift */; };
 		2122A6EA1B22B9320006409B /* SyntaxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2122A6DE1B22B9320006409B /* SyntaxKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +50,13 @@
 		210299CC1B2E8924009C61EE /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		210299CF1B2E8924009C61EE /* LanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTests.swift; sourceTree = "<group>"; };
 		210299D01B2E8924009C61EE /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
-		210299E31B2E8AFC009C61EE /* YAML.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YAML.plist; sourceTree = "<group>"; };
 		210299E41B2E8AFC009C61EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210299E71B2E929C009C61EE /* ResultSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSet.swift; sourceTree = "<group>"; };
+		2119897C1B2EAAD400F0D786 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2119897E1B2EAF0900F0D786 /* Tomorrow.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tomorrow.tmTheme; sourceTree = "<group>"; };
+		2119897F1B2EAF0900F0D786 /* YAML.tmLanguage */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = YAML.tmLanguage; sourceTree = "<group>"; };
+		211989821B2EB18000F0D786 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		211989851B2EB3F800F0D786 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 		2122A6DE1B22B9320006409B /* SyntaxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SyntaxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2122A6E91B22B9320006409B /* SyntaxKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyntaxKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,8 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				210299E11B2E8AFC009C61EE /* Resources */,
+				211989821B2EB18000F0D786 /* TestHelper.swift */,
 				210299D01B2E8924009C61EE /* ParserTests.swift */,
 				210299CF1B2E8924009C61EE /* LanguageTests.swift */,
+				211989851B2EB3F800F0D786 /* ColorTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -115,7 +125,8 @@
 		210299E21B2E8AFC009C61EE /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				210299E31B2E8AFC009C61EE /* YAML.plist */,
+				2119897E1B2EAF0900F0D786 /* Tomorrow.tmTheme */,
+				2119897F1B2EAF0900F0D786 /* YAML.tmLanguage */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -128,6 +139,7 @@
 				210299C61B2E8924009C61EE /* CaptureCollection.swift */,
 				210299CA1B2E8924009C61EE /* Result.swift */,
 				210299E71B2E929C009C61EE /* ResultSet.swift */,
+				2119897C1B2EAAD400F0D786 /* Color.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -257,7 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210299E51B2E8AFC009C61EE /* YAML.plist in Resources */,
+				211989801B2EAF0900F0D786 /* Tomorrow.tmTheme in Resources */,
+				211989811B2EAF0900F0D786 /* YAML.tmLanguage in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +284,7 @@
 				210299D71B2E8924009C61EE /* Pattern.swift in Sources */,
 				210299DA1B2E8924009C61EE /* Theme.swift in Sources */,
 				210299D31B2E8924009C61EE /* Capture.swift in Sources */,
+				2119897D1B2EAAD400F0D786 /* Color.swift in Sources */,
 				210299D51B2E8924009C61EE /* Language.swift in Sources */,
 				210299D61B2E8924009C61EE /* Parser.swift in Sources */,
 				210299E81B2E929C009C61EE /* ResultSet.swift in Sources */,
@@ -284,6 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211989841B2EB18600F0D786 /* TestHelper.swift in Sources */,
+				211989871B2EB3F800F0D786 /* ColorTests.swift in Sources */,
 				210299DF1B2E892E009C61EE /* ParserTests.swift in Sources */,
 				210299DE1B2E892E009C61EE /* LanguageTests.swift in Sources */,
 			);

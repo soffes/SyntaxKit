@@ -8,13 +8,21 @@
 
 import Foundation
 
+#if os(OSX)
+import AppKit
+#else
+import UIKit
+#endif
+
+public typealias Attributes = [String: AnyObject]
+
 public struct Theme {
 
 	// MARK: - Properties
 
 	public let UUID: String
 	public let name: String
-	public let settings: [String: AnyObject]
+	public let settings: [String: Attributes]
 
 
 	// MARK: - Initializers
@@ -22,11 +30,28 @@ public struct Theme {
 	public init?(dictionary: [NSObject: AnyObject]) {
 		guard let UUID = dictionary["uuid"] as? String,
 			name = dictionary["name"] as? String,
-			settings = dictionary["settings"] as? [String: AnyObject]
+			rawSettings = dictionary["settings"] as? [String: Attributes]
 			else { return nil }
 
 		self.UUID = UUID
 		self.name = name
+
+		var settings = [String: Attributes]()
+		for (scope, attrs) in rawSettings {
+			var attributes = attrs
+
+			if let value = attributes.removeValueForKey("foreground") as? String {
+				attributes[NSForegroundColorAttributeName] = Color(hex: value)
+			}
+
+			if let value = attributes.removeValueForKey("background") as? String {
+				attributes[NSBackgroundColorAttributeName] = Color(hex: value)
+			}
+
+			// TODO: caret, invisibles, lightHighlight, selection
+
+			settings[scope] = attributes
+		}
 		self.settings = settings
 	}
 }

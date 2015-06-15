@@ -13,11 +13,7 @@ class LanguageTests: XCTestCase {
 
 	// MARK: - Properties
 
-	let yaml: Language = {
-		let path = NSBundle(forClass: LanguageTests.self).pathForResource("YAML", ofType: "plist")!
-		let plist = NSDictionary(contentsOfFile: path)! as [NSObject: AnyObject]
-		return Language(dictionary: plist)!
-	}()
+	let yaml = yamlLanguage()
 
 
 	// MARK: - Tests
