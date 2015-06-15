@@ -9,16 +9,6 @@
 import Foundation
 
 final class Pattern {
-//	+ (instancetype)patternWithDictionary:(NSDictionary *)dictionary language:(SYNLanguage *)language {
-//	NSString *include = dictionary[@"include"];
-//	if (include) {
-//	include = [include substringFromIndex:1];
-//	return language.repository[include];
-//	}
-//
-//	return [[self alloc] initWithDictionary:dictionary];
-//	}
-
 
 	// MARK: - Properties
 
