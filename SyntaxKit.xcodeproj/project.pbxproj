@@ -79,15 +79,10 @@
 		210299C31B2E8924009C61EE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				210299C41B2E8924009C61EE /* AttributedParser.swift */,
-				210299C51B2E8924009C61EE /* Capture.swift */,
-				210299C61B2E8924009C61EE /* CaptureCollection.swift */,
-				210299C71B2E8924009C61EE /* Language.swift */,
-				210299C81B2E8924009C61EE /* Parser.swift */,
-				210299C91B2E8924009C61EE /* Pattern.swift */,
-				210299CA1B2E8924009C61EE /* Result.swift */,
 				210299CB1B2E8924009C61EE /* SyntaxKit.h */,
-				210299CC1B2E8924009C61EE /* Theme.swift */,
+				210299C81B2E8924009C61EE /* Parser.swift */,
+				210299C41B2E8924009C61EE /* AttributedParser.swift */,
+				210299E01B2E896B009C61EE /* Private */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -100,6 +95,19 @@
 				210299D01B2E8924009C61EE /* ParserTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		210299E01B2E896B009C61EE /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				210299C51B2E8924009C61EE /* Capture.swift */,
+				210299C61B2E8924009C61EE /* CaptureCollection.swift */,
+				210299C71B2E8924009C61EE /* Language.swift */,
+				210299C91B2E8924009C61EE /* Pattern.swift */,
+				210299CA1B2E8924009C61EE /* Result.swift */,
+				210299CC1B2E8924009C61EE /* Theme.swift */,
+			);
+			name = Private;
 			sourceTree = "<group>";
 		};
 		2122A6D41B22B9320006409B = {
@@ -355,12 +363,14 @@
 		2122A6F51B22B9320006409B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/SyntaxKit/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -374,12 +384,14 @@
 		2122A6F61B22B9320006409B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/SyntaxKit/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
