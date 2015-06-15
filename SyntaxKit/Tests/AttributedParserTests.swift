@@ -13,7 +13,7 @@ class AttributedParserTests: XCTestCase {
 
 	// MARK: - Properties
 
-	var parser = AttributedParser(language: yamlLanguage(), theme: simpleTheme())
+	let parser = AttributedParser(language: yamlLanguage(), theme: simpleTheme())
 
 
 	// MARK: - Tests

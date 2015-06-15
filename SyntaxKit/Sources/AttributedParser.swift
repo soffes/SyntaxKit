@@ -28,7 +28,7 @@ public class AttributedParser: Parser {
 
 	// MARK: - Parsing
 
-	public func attributedParse(string: String, match callback: AttributedCallback) {
+	public func parse(string: String, match callback: AttributedCallback) {
 		parse(string) { scope, range in
 			callback(scope: scope, range: range, attributes: self.attributesForScope(scope))
 		}
@@ -36,7 +36,7 @@ public class AttributedParser: Parser {
 
 	public func attributedStringForString(string: String, baseAttributes: Attributes? = nil) -> NSAttributedString {
 		let output = NSMutableAttributedString(string: string, attributes: baseAttributes)
-		attributedParse(string) { _, range, attributes in
+		parse(string) { _, range, attributes in
 			if let attributes = attributes {
 				output.addAttributes(attributes, range: range)
 			}
