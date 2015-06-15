@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import SyntaxKit
+import XCTest
+@testable import SyntaxKit
 
 func yamlLanguage() -> Language! {
 	let path = NSBundle(forClass: LanguageTests.self).pathForResource("YAML", ofType: "tmLanguage")!
@@ -26,19 +27,34 @@ func simpleTheme() -> Theme! {
 		"uuid": "7",
 		"name": "Simple",
 		"settings": [
-			"entity.name": [
-				"color": "blue"
+			[
+				"scope": "entity.name",
+				"settings": [
+					"color": "blue"
+				]
 			],
-			"string": [
-				"color": "red"
+			[
+				"scope": "string",
+				"settings": [
+					"color": "red"
+				]
 			],
-			"constant.numeric": [
-				"color": "purple"
+			[
+				"scope": "constant.numeric",
+				"settings": [
+					"color": "purple"
+				]
 			]
 		]
 	])
 }
 
+func assertEqualColors(color1: Color, _ color2: Color, accuracy: CGFloat = 0.005) {
+	XCTAssertEqualWithAccuracy(color1.redComponent, color2.redComponent, accuracy: accuracy)
+	XCTAssertEqualWithAccuracy(color1.greenComponent, color2.greenComponent, accuracy: accuracy)
+	XCTAssertEqualWithAccuracy(color1.blueComponent, color2.blueComponent, accuracy: accuracy)
+	XCTAssertEqualWithAccuracy(color1.alphaComponent, color2.alphaComponent, accuracy: accuracy)
+}
 
 extension NSRange: Equatable { }
 

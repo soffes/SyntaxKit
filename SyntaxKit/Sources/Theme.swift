@@ -22,7 +22,7 @@ public struct Theme {
 
 	public let UUID: String
 	public let name: String
-	public let settings: [String: Attributes]
+	public let attributes: [String: Attributes]
 
 
 	// MARK: - Initializers
@@ -30,28 +30,32 @@ public struct Theme {
 	public init?(dictionary: [NSObject: AnyObject]) {
 		guard let UUID = dictionary["uuid"] as? String,
 			name = dictionary["name"] as? String,
-			rawSettings = dictionary["settings"] as? [String: Attributes]
+			rawSettings = dictionary["settings"] as? [[String: AnyObject]]
 			else { return nil }
 
 		self.UUID = UUID
 		self.name = name
 
-		var settings = [String: Attributes]()
-		for (scope, attrs) in rawSettings {
-			var attributes = attrs
+		var attributes = [String: Attributes]()
+		for raw in rawSettings {
+			guard let scopes = raw["scope"] as? String else { continue }
+			guard var setting = raw["settings"] as? [String: AnyObject] else { continue }
 
-			if let value = attributes.removeValueForKey("foreground") as? String {
-				attributes[NSForegroundColorAttributeName] = Color(hex: value)
+			if let value = setting.removeValueForKey("foreground") as? String {
+				setting[NSForegroundColorAttributeName] = Color(hex: value)
 			}
 
-			if let value = attributes.removeValueForKey("background") as? String {
-				attributes[NSBackgroundColorAttributeName] = Color(hex: value)
+			if let value = setting.removeValueForKey("background") as? String {
+				setting[NSBackgroundColorAttributeName] = Color(hex: value)
 			}
 
-			// TODO: caret, invisibles, lightHighlight, selection
+			// TODO: caret, invisibles, lightHighlight, selection, font style
 
-			settings[scope] = attributes
+			for scope in scopes.componentsSeparatedByString(",") {
+				let key = scope.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+				attributes[key] = setting
+			}
 		}
-		self.settings = settings
+		self.attributes = attributes
 	}
 }
