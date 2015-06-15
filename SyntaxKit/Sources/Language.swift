@@ -58,7 +58,6 @@ struct Language {
 	let UUID: String
 	let name: String
 	let scopeName: String
-	let repository: Repository
 	let patterns: [Pattern]
 
 
@@ -82,12 +81,18 @@ struct Language {
 				}
 			}
 		}
-		self.repository = repository
 
 		var patterns = [Pattern]()
 		if let array = dictionary["patterns"] as? [[NSObject: AnyObject]] {
 			for value in array {
-				// TODO: Handle repository
+				if let include = value["include"] as? String {
+					let key = include.substringFromIndex(include.startIndex.successor())
+					if let pattern = repository[key] {
+						patterns.append(pattern)
+						continue
+					}
+				}
+
 				if let pattern = Pattern(dictionary: value) {
 					patterns.append(pattern)
 				}

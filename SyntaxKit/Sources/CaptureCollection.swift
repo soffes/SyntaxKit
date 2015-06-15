@@ -12,9 +12,9 @@ struct CaptureCollection {
 
 	// MARK: - Properties
 
-	private let captures: [Int: Capture]
+	private let captures: [UInt: Capture]
 
-	var captureIndexes: [Int] {
+	var captureIndexes: [UInt] {
 		var keys = captures.keys.array
 		keys.sortInPlace() { $0 < $1 }
 		return keys
@@ -24,11 +24,11 @@ struct CaptureCollection {
 	// MARK: - Initializers
 
 	init?(dictionary: [NSObject: AnyObject]) {
-		guard let dictionary = dictionary as? [Int: [String: String]]  else { return nil }
+		guard let dictionary = dictionary as? [String: [String: String]]  else { return nil }
 
-		var captures = [Int: Capture]()
+		var captures = [UInt: Capture]()
 		for (key, value) in dictionary {
-			if let capture = Capture(dictionary: value) {
+			if let key = UInt(key), capture = Capture(dictionary: value) {
 				captures[key] = capture
 			}
 		}
@@ -38,7 +38,7 @@ struct CaptureCollection {
 
 	// MARK: - Accessing Captures
 
-	func captureAtIndex(index: Int) -> Capture? {
+	subscript(index: UInt) -> Capture? {
 		return captures[index]
 	}
 }

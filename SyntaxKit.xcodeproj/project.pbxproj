@@ -14,10 +14,11 @@
 		210299D61B2E8924009C61EE /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299C81B2E8924009C61EE /* Parser.swift */; };
 		210299D71B2E8924009C61EE /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299C91B2E8924009C61EE /* Pattern.swift */; };
 		210299D81B2E8924009C61EE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299CA1B2E8924009C61EE /* Result.swift */; };
-		210299D91B2E8924009C61EE /* SyntaxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 210299CB1B2E8924009C61EE /* SyntaxKit.h */; };
+		210299D91B2E8924009C61EE /* SyntaxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 210299CB1B2E8924009C61EE /* SyntaxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		210299DA1B2E8924009C61EE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299CC1B2E8924009C61EE /* Theme.swift */; };
 		210299DE1B2E892E009C61EE /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299CF1B2E8924009C61EE /* LanguageTests.swift */; };
 		210299DF1B2E892E009C61EE /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299D01B2E8924009C61EE /* ParserTests.swift */; };
+		210299E51B2E8AFC009C61EE /* YAML.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210299E31B2E8AFC009C61EE /* YAML.plist */; };
 		2122A6EA1B22B9320006409B /* SyntaxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2122A6DE1B22B9320006409B /* SyntaxKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +43,10 @@
 		210299CA1B2E8924009C61EE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		210299CB1B2E8924009C61EE /* SyntaxKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyntaxKit.h; sourceTree = "<group>"; };
 		210299CC1B2E8924009C61EE /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		210299CE1B2E8924009C61EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210299CF1B2E8924009C61EE /* LanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTests.swift; sourceTree = "<group>"; };
 		210299D01B2E8924009C61EE /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		210299E31B2E8AFC009C61EE /* YAML.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YAML.plist; sourceTree = "<group>"; };
+		210299E41B2E8AFC009C61EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2122A6DE1B22B9320006409B /* SyntaxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SyntaxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2122A6E91B22B9320006409B /* SyntaxKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyntaxKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,9 +92,9 @@
 		210299CD1B2E8924009C61EE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				210299CE1B2E8924009C61EE /* Info.plist */,
-				210299CF1B2E8924009C61EE /* LanguageTests.swift */,
+				210299E11B2E8AFC009C61EE /* Resources */,
 				210299D01B2E8924009C61EE /* ParserTests.swift */,
+				210299CF1B2E8924009C61EE /* LanguageTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -108,6 +110,23 @@
 				210299CC1B2E8924009C61EE /* Theme.swift */,
 			);
 			name = Private;
+			sourceTree = "<group>";
+		};
+		210299E11B2E8AFC009C61EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				210299E21B2E8AFC009C61EE /* Fixtures */,
+				210299E41B2E8AFC009C61EE /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		210299E21B2E8AFC009C61EE /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				210299E31B2E8AFC009C61EE /* YAML.plist */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		2122A6D41B22B9320006409B = {
@@ -194,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Sam Soffes";
 				TargetAttributes = {
 					2122A6DD1B22B9320006409B = {
@@ -235,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210299E51B2E8AFC009C61EE /* YAML.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +317,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -375,6 +396,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SyntaxKit/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.syntaxkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -396,6 +418,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SyntaxKit/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.syntaxkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -413,8 +436,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SyntaxKit/Tests/Info.plist;
+				INFOPLIST_FILE = SyntaxKit/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.syntaxkit.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -427,8 +451,9 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SyntaxKit/Tests/Info.plist;
+				INFOPLIST_FILE = SyntaxKit/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.syntaxkit.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
