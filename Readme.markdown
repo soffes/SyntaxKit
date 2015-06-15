@@ -1,20 +1,20 @@
-# Syntax Kit
+# SyntaxKit
 
 [![Version](https://img.shields.io/github/release/soffes/SyntaxKit.svg)](https://github.com/soffes/SyntaxKit/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/SyntaxKit.svg)](https://cocoapods.org/pods/SyntaxKit)
 
-Syntax Kit makes TextMate-style syntax highlighting easy. It works on iOS & OS X.
+SyntaxKit makes TextMate-style syntax highlighting easy. It works on iOS & OS X.
 
-Syntax Kit was abstracted from [Whiskey](http://usewhiskey.com).
+SyntaxKit was abstracted from [Whiskey](http://usewhiskey.com).
 
 
 ## Building
 
-Syntax Kit is written in Swift 2 so Xcode 7 is required. There aren't any dependencies besides system frameworks.
+SyntaxKit is written in Swift 2 so Xcode 7 is required. There aren't any dependencies besides system frameworks.
 
 
 ## Installation
 
-[Carthage](https://github.com/carthage/carthage) is the recommended way to install Syntax Kit. Add the following to your Cartfile:
+[Carthage](https://github.com/carthage/carthage) is the recommended way to install SyntaxKit. Add the following to your Cartfile:
 
 ``` ruby
 github "soffes/SyntaxKit"
@@ -31,7 +31,7 @@ For manual installation, I recommend adding the project as a subproject to your 
 
 ## Usage
 
-Syntax Kit uses `tmLanguage` and `tmTheme` files to highlight source code. None are provided with Syntax Kit. Thankfully, there are tons available at [TextMate's GitHub org](https://github.com/textmate).
+SyntaxKit uses `tmLanguage` and `tmTheme` files to highlight source code. None are provided with SyntaxKit. Thankfully, there are tons available at [TextMate's GitHub org](https://github.com/textmate).
 
 ### Basic Parsing
 
@@ -61,7 +61,7 @@ parser.parse(input) { scope, range in
 
 ### Working with Attributed Strings
 
-Syntax Kit also comes with `AttributedParser`. This is a simple subclass of `Parser` that knows how to work with themes.
+SyntaxKit also comes with `AttributedParser`. This is a simple subclass of `Parser` that knows how to work with themes.
 
 ```swift
 let tomorrow = Theme(dictionary: themePlist)
