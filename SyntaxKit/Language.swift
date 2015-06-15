@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias Repository = [String: Pattern]
+
 struct Language {
 //	#pragma mark - Factory
 //
@@ -56,6 +58,11 @@ struct Language {
 	let UUID: String
 	let name: String
 	let scopeName: String
+	let repository: Repository
+	let patterns: [Pattern]
+
+
+	// MARK: - Initializers
 
 	init?(dictionary: [NSObject: AnyObject]) {
 		guard let UUID = dictionary["uuid"] as? String,
@@ -66,41 +73,26 @@ struct Language {
 		self.UUID = UUID
 		self.name = name
 		self.scopeName = scopeName
+
+		var repository = [String: Pattern]()
+		if let repo = dictionary["repository"] as? [String: [NSObject: AnyObject]] {
+			for (key, value) in repo {
+				if let pattern = Pattern(dictionary: value) {
+					repository[key] = pattern
+				}
+			}
+		}
+		self.repository = repository
+
+		var patterns = [Pattern]()
+		if let array = dictionary["patterns"] as? [[NSObject: AnyObject]] {
+			for value in array {
+				// TODO: Handle repository
+				if let pattern = Pattern(dictionary: value) {
+					patterns.append(pattern)
+				}
+			}
+		}
+		self.patterns = patterns
 	}
-//
-//
-//	#pragma mark - Initializers
-//
-//	- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-//	if ((self = [super init])) {
-//	self.UUID = dictionary[@"uuid"];
-//	self.name = dictionary[@"name"];
-//	self.scopeName = dictionary[@"scopeName"];
-//
-//	// Repository
-//	NSDictionary *repo = dictionary[@"repository"];
-//	NSMutableDictionary *repository = [[NSMutableDictionary alloc] init];
-//	for (NSString *key in repo) {
-//	repository[key] = [[SYNPattern alloc] initWithDictionary:repo[key]];
-//	}
-//
-//	if ([repository count] > 0) {
-//	self.repository = repository;
-//	}
-//
-//	// Patterns
-//	NSMutableArray *patterns = [[NSMutableArray alloc] init];
-//	for (NSDictionary *dict in dictionary[@"patterns"]) {
-//	SYNPattern *pattern = [SYNPattern patternWithDictionary:dict language:self];
-//	if (pattern) {
-//	[patterns addObject:pattern];
-//	}
-//	}
-//
-//	if ([patterns count] > 0) {
-//	self.patterns = patterns;
-//	}
-//	}
-//	return self;
-//	}
 }
