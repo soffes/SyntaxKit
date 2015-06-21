@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "211989A61B2EC3B600F0D786"
-               BuildableName = "SyntaxKit.framework"
-               BlueprintName = "SyntaxKit-iOS"
+               BlueprintIdentifier = "2198CEC91B36D5D700BD463F"
+               BuildableName = "SyntaxKit-watchOS.framework"
+               BlueprintName = "SyntaxKit-watchOS"
                ReferencedContainer = "container:SyntaxKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,29 +26,9 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "211989AF1B2EC3B600F0D786"
-               BuildableName = "SyntaxKit-iOSTests.xctest"
-               BlueprintName = "SyntaxKit-iOSTests"
-               ReferencedContainer = "container:SyntaxKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "211989A61B2EC3B600F0D786"
-            BuildableName = "SyntaxKit.framework"
-            BlueprintName = "SyntaxKit-iOS"
-            ReferencedContainer = "container:SyntaxKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -65,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "211989A61B2EC3B600F0D786"
-            BuildableName = "SyntaxKit.framework"
-            BlueprintName = "SyntaxKit-iOS"
+            BlueprintIdentifier = "2198CEC91B36D5D700BD463F"
+            BuildableName = "SyntaxKit-watchOS.framework"
+            BlueprintName = "SyntaxKit-watchOS"
             ReferencedContainer = "container:SyntaxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "211989A61B2EC3B600F0D786"
-            BuildableName = "SyntaxKit.framework"
-            BlueprintName = "SyntaxKit-iOS"
+            BlueprintIdentifier = "2198CEC91B36D5D700BD463F"
+            BuildableName = "SyntaxKit-watchOS.framework"
+            BlueprintName = "SyntaxKit-watchOS"
             ReferencedContainer = "container:SyntaxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

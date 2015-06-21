@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/github/release/soffes/SyntaxKit.svg)](https://github.com/soffes/SyntaxKit/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/SyntaxKit.svg)](https://cocoapods.org/pods/SyntaxKit)
 
-SyntaxKit makes TextMate-style syntax highlighting easy. It works on iOS & OS X.
+SyntaxKit makes TextMate-style syntax highlighting easy. It works on iOS, watchOS, and OS X.
 
 SyntaxKit was abstracted from [Whiskey](http://usewhiskey.com).
 
