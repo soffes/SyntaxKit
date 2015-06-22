@@ -13,7 +13,7 @@ class LanguageTests: XCTestCase {
 
 	// MARK: - Properties
 
-	let yaml = yamlLanguage()
+	let yaml = language("YAML")
 
 
 	// MARK: - Tests

@@ -13,7 +13,7 @@ class ParserTests: XCTestCase {
 
 	// MARK: - Properties
 
-	var parser = Parser(language: yamlLanguage())
+	let parser = Parser(language: language("YAML"))
 
 
 	// MARK: - Tests
@@ -52,5 +52,11 @@ class ParserTests: XCTestCase {
 		}
 	
 		XCTAssertEqual(NSMakeRange(39, 4), stringQuoted!)
+	}
+
+	func testRuby() {
+		let parser = Parser(language: language("Ruby"))
+		let input = fixture("test.rb", "txt")
+		parser.parse(input, match: { _, _ in return })
 	}
 }
