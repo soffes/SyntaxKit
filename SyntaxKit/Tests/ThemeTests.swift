@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import X
 @testable import SyntaxKit
 
 class ThemeTests: XCTestCase {

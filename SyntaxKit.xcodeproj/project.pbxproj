@@ -43,6 +43,10 @@
 		211989CE1B2EC40C00F0D786 /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210299CF1B2E8924009C61EE /* LanguageTests.swift */; };
 		211989CF1B2EC40C00F0D786 /* ThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119898A1B2EBA2C00F0D786 /* ThemeTests.swift */; };
 		2122A6EA1B22B9320006409B /* SyntaxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2122A6DE1B22B9320006409B /* SyntaxKit.framework */; };
+		2132B6201B7BFFA700C2F25B /* X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F28DDC1B7AC802009DD1E9 /* X.framework */; };
+		2132B6211B7BFFAD00C2F25B /* X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F28DDA1B7AC7F8009DD1E9 /* X.framework */; };
+		2132B6231B7BFFFD00C2F25B /* X.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21F28DDC1B7AC802009DD1E9 /* X.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2132B6251B7C000A00C2F25B /* X.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21F28DDA1B7AC7F8009DD1E9 /* X.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2198CED21B36D5DE00BD463F /* AttributedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119898C1B2EC38B00F0D786 /* AttributedParser.swift */; };
 		2198CED31B36D5DE00BD463F /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119898D1B2EC38B00F0D786 /* Capture.swift */; };
 		2198CED41B36D5DE00BD463F /* CaptureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119898E1B2EC38B00F0D786 /* CaptureCollection.swift */; };
@@ -74,6 +78,31 @@
 			remoteInfo = SyntaxKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2132B6221B7BFFF300C2F25B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2132B6231B7BFFFD00C2F25B /* X.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2132B6241B7C000400C2F25B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2132B6251B7C000A00C2F25B /* X.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		210299C21B2E8924009C61EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				211989B11B2EC3B600F0D786 /* SyntaxKit.framework in Frameworks */,
+				2132B6211B7BFFAD00C2F25B /* X.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2122A6EA1B22B9320006409B /* SyntaxKit.framework in Frameworks */,
+				2132B6201B7BFFA700C2F25B /* X.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +348,7 @@
 				211989AC1B2EC3B600F0D786 /* Sources */,
 				211989AD1B2EC3B600F0D786 /* Frameworks */,
 				211989AE1B2EC3B600F0D786 /* Resources */,
+				2132B6241B7C000400C2F25B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,6 +385,7 @@
 				2122A6E51B22B9320006409B /* Sources */,
 				2122A6E61B22B9320006409B /* Frameworks */,
 				2122A6E71B22B9320006409B /* Resources */,
+				2132B6221B7BFFF300C2F25B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -613,7 +646,12 @@
 		211989BC1B2EC3B600F0D786 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SyntaxKit/Tests/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -626,7 +664,12 @@
 		211989BD1B2EC3B600F0D786 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SyntaxKit/Tests/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -778,10 +821,12 @@
 		2122A6F81B22B9320006409B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -797,10 +842,12 @@
 		2122A6F91B22B9320006409B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SyntaxKit/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";

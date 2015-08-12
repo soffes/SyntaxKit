@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2198CEC91B36D5D700BD463F"
-               BuildableName = "SyntaxKit-watchOS.framework"
+               BuildableName = "SyntaxKit.framework"
                BlueprintName = "SyntaxKit-watchOS"
                ReferencedContainer = "container:SyntaxKit.xcodeproj">
             </BuildableReference>
@@ -23,21 +23,21 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2198CEC91B36D5D700BD463F"
-            BuildableName = "SyntaxKit-watchOS.framework"
+            BuildableName = "SyntaxKit.framework"
             BlueprintName = "SyntaxKit-watchOS"
             ReferencedContainer = "container:SyntaxKit.xcodeproj">
          </BuildableReference>
@@ -55,16 +55,16 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2198CEC91B36D5D700BD463F"
-            BuildableName = "SyntaxKit-watchOS.framework"
+            BuildableName = "SyntaxKit.framework"
             BlueprintName = "SyntaxKit-watchOS"
             ReferencedContainer = "container:SyntaxKit.xcodeproj">
          </BuildableReference>

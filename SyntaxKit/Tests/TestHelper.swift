@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import X
 @testable import SyntaxKit
 
 func yamlLanguage() -> Language! {
