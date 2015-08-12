@@ -7,11 +7,10 @@
 //
 
 import Foundation
+import X
 
-#if os(OSX)
-import AppKit
-#else
-import UIKit
+#if os(iOS) || os(watchOS)
+	import UIKit
 #endif
 
 public typealias Attributes = [String: AnyObject]
