@@ -99,7 +99,7 @@ public class Parser {
 	private func parse(string: String, inRange bounds: NSRange, scope: String? = nil, expression expressionString: String, captures: CaptureCollection?) -> ResultSet? {
 		let matches: [NSTextCheckingResult]
 		do {
-			let expression = try NSRegularExpression(pattern: expressionString, options: [.AnchorsMatchLines])
+			let expression = try NSRegularExpression(pattern: expressionString, options: [.CaseInsensitive])
 			matches = expression.matchesInString(string, options: [], range: bounds)
 		} catch {
 			return nil

@@ -11,14 +11,19 @@ import XCTest
 import X
 @testable import SyntaxKit
 
-func yamlLanguage() -> Language! {
-	let path = NSBundle(forClass: LanguageTests.self).pathForResource("YAML", ofType: "tmLanguage")!
+func fixture(name: String, _ type: String) -> String! {
+	let path = NSBundle(forClass: LanguageTests.self).pathForResource(name, ofType: type)!
+	return try! String(contentsOfFile: path)
+}
+
+func language(name: String) -> Language! {
+	let path = NSBundle(forClass: LanguageTests.self).pathForResource(name, ofType: "tmLanguage")!
 	let plist = NSDictionary(contentsOfFile: path)! as [NSObject: AnyObject]
 	return Language(dictionary: plist)!
 }
 
-func tomorrowTheme() -> Theme! {
-	let path = NSBundle(forClass: LanguageTests.self).pathForResource("Tomorrow", ofType: "tmTheme")!
+func theme(name: String) -> Theme! {
+	let path = NSBundle(forClass: LanguageTests.self).pathForResource(name, ofType: "tmTheme")!
 	let plist = NSDictionary(contentsOfFile: path)! as [NSObject: AnyObject]
 	return Theme(dictionary: plist)!
 }
