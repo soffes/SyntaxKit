@@ -15,7 +15,7 @@ struct CaptureCollection {
 	private let captures: [UInt: Capture]
 
 	var captureIndexes: [UInt] {
-		var keys = captures.keys.array
+		var keys = Array(captures.keys)
 		keys.sortInPlace() { $0 < $1 }
 		return keys
 	}
