@@ -74,7 +74,7 @@ public class Parser {
 					beginRange = beginResults.range else { continue }
 
 				let location = NSMaxRange(beginRange)
-				let endBounds = NSMakeRange(location, bounds.length - location - bounds.location)
+				let endBounds = NSMakeRange(location, NSMaxRange(bounds) - location)
 
 				guard let endResults = parse(string, inRange: endBounds, expression: end, captures: pattern.endCaptures),
 					endRange = endResults.range else { /* TODO: Rewind? */ continue }

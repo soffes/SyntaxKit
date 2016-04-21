@@ -64,6 +64,10 @@
 		21F28DDB1B7AC7F8009DD1E9 /* X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F28DDA1B7AC7F8009DD1E9 /* X.framework */; };
 		21F28DDD1B7AC802009DD1E9 /* X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F28DDC1B7AC802009DD1E9 /* X.framework */; };
 		21F28DDF1B7AC80B009DD1E9 /* X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F28DDE1B7AC80B009DD1E9 /* X.framework */; };
+		92EC79D41CC9060600E058ED /* JavaScript.tmLanguage in Resources */ = {isa = PBXBuildFile; fileRef = 92EC79D31CC9060600E058ED /* JavaScript.tmLanguage */; };
+		92EC79D51CC9060600E058ED /* JavaScript.tmLanguage in Resources */ = {isa = PBXBuildFile; fileRef = 92EC79D31CC9060600E058ED /* JavaScript.tmLanguage */; };
+		92EC79D71CC9061D00E058ED /* test.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92EC79D61CC9061D00E058ED /* test.js.txt */; };
+		92EC79D81CC9061D00E058ED /* test.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92EC79D61CC9061D00E058ED /* test.js.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +142,8 @@
 		21F28DDA1B7AC7F8009DD1E9 /* X.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = X.framework; path = Carthage/Build/iOS/X.framework; sourceTree = "<group>"; };
 		21F28DDC1B7AC802009DD1E9 /* X.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = X.framework; path = Carthage/Build/Mac/X.framework; sourceTree = "<group>"; };
 		21F28DDE1B7AC80B009DD1E9 /* X.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = X.framework; path = Carthage/Build/watchOS/X.framework; sourceTree = "<group>"; };
+		92EC79D31CC9060600E058ED /* JavaScript.tmLanguage */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JavaScript.tmLanguage; sourceTree = "<group>"; };
+		92EC79D61CC9061D00E058ED /* test.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.js.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +229,8 @@
 				210BF26C1B37C04E008AA4F0 /* test.rb.txt */,
 				2119897E1B2EAF0900F0D786 /* Tomorrow.tmTheme */,
 				2119897F1B2EAF0900F0D786 /* YAML.tmLanguage */,
+				92EC79D31CC9060600E058ED /* JavaScript.tmLanguage */,
+				92EC79D61CC9061D00E058ED /* test.js.txt */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -485,8 +493,10 @@
 			files = (
 				210BF2711B37C0A2008AA4F0 /* Ruby.tmLanguage in Resources */,
 				211989C91B2EC40900F0D786 /* Tomorrow.tmTheme in Resources */,
+				92EC79D81CC9061D00E058ED /* test.js.txt in Resources */,
 				210BF26E1B37C04E008AA4F0 /* test.rb.txt in Resources */,
 				211989CA1B2EC40900F0D786 /* YAML.tmLanguage in Resources */,
+				92EC79D51CC9060600E058ED /* JavaScript.tmLanguage in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,8 +513,10 @@
 			files = (
 				210BF2701B37C0A2008AA4F0 /* Ruby.tmLanguage in Resources */,
 				211989801B2EAF0900F0D786 /* Tomorrow.tmTheme in Resources */,
+				92EC79D71CC9061D00E058ED /* test.js.txt in Resources */,
 				210BF26D1B37C04E008AA4F0 /* test.rb.txt in Resources */,
 				211989811B2EAF0900F0D786 /* YAML.tmLanguage in Resources */,
+				92EC79D41CC9060600E058ED /* JavaScript.tmLanguage in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
