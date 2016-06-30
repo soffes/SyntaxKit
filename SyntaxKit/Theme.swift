@@ -9,7 +9,7 @@
 import Foundation
 import X
 
-#if os(iOS) || os(watchOS)
+#if !os(OSX)
 	import UIKit
 #endif
 
