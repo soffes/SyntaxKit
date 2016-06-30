@@ -133,7 +133,7 @@
 		211989A71B2EC3B600F0D786 /* SyntaxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SyntaxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		211989B01B2EC3B600F0D786 /* SyntaxKitTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SyntaxKitTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2122A6DE1B22B9320006409B /* SyntaxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SyntaxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2122A6E91B22B9320006409B /* SyntaxKitTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SyntaxKitTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2122A6E91B22B9320006409B /* SyntaxKitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SyntaxKitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2198CECA1B36D5D700BD463F /* SyntaxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SyntaxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F28DDA1B7AC7F8009DD1E9 /* X.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = X.framework; path = Carthage/Build/iOS/X.framework; sourceTree = "<group>"; };
 		21F28DDC1B7AC802009DD1E9 /* X.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = X.framework; path = Carthage/Build/Mac/X.framework; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				2122A6DE1B22B9320006409B /* SyntaxKit.framework */,
-				2122A6E91B22B9320006409B /* SyntaxKitTests-OSX.xctest */,
+				2122A6E91B22B9320006409B /* SyntaxKitTests-macOS.xctest */,
 				211989A71B2EC3B600F0D786 /* SyntaxKit.framework */,
 				211989B01B2EC3B600F0D786 /* SyntaxKitTests-iOS.xctest */,
 				2198CECA1B36D5D700BD463F /* SyntaxKit.framework */,
@@ -368,9 +368,9 @@
 			productReference = 211989B01B2EC3B600F0D786 /* SyntaxKitTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2122A6DD1B22B9320006409B /* SyntaxKit-OSX */ = {
+		2122A6DD1B22B9320006409B /* SyntaxKit-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2122A6F41B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKit-OSX" */;
+			buildConfigurationList = 2122A6F41B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKit-macOS" */;
 			buildPhases = (
 				2122A6D91B22B9320006409B /* Sources */,
 				2122A6DA1B22B9320006409B /* Frameworks */,
@@ -381,14 +381,14 @@
 			);
 			dependencies = (
 			);
-			name = "SyntaxKit-OSX";
+			name = "SyntaxKit-macOS";
 			productName = SyntaxKit;
 			productReference = 2122A6DE1B22B9320006409B /* SyntaxKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2122A6E81B22B9320006409B /* SyntaxKitTests-OSX */ = {
+		2122A6E81B22B9320006409B /* SyntaxKitTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2122A6F71B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKitTests-OSX" */;
+			buildConfigurationList = 2122A6F71B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKitTests-macOS" */;
 			buildPhases = (
 				2122A6E51B22B9320006409B /* Sources */,
 				2122A6E61B22B9320006409B /* Frameworks */,
@@ -400,9 +400,9 @@
 			dependencies = (
 				2122A6EC1B22B9320006409B /* PBXTargetDependency */,
 			);
-			name = "SyntaxKitTests-OSX";
+			name = "SyntaxKitTests-macOS";
 			productName = SyntaxKitTests;
-			productReference = 2122A6E91B22B9320006409B /* SyntaxKitTests-OSX.xctest */;
+			productReference = 2122A6E91B22B9320006409B /* SyntaxKitTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		2198CEC91B36D5D700BD463F /* SyntaxKit-watchOS */ = {
@@ -462,8 +462,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2122A6DD1B22B9320006409B /* SyntaxKit-OSX */,
-				2122A6E81B22B9320006409B /* SyntaxKitTests-OSX */,
+				2122A6DD1B22B9320006409B /* SyntaxKit-macOS */,
+				2122A6E81B22B9320006409B /* SyntaxKitTests-macOS */,
 				211989A61B2EC3B600F0D786 /* SyntaxKit-iOS */,
 				211989AF1B2EC3B600F0D786 /* SyntaxKitTests-iOS */,
 				2198CEC91B36D5D700BD463F /* SyntaxKit-watchOS */,
@@ -600,7 +600,7 @@
 		};
 		2122A6EC1B22B9320006409B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2122A6DD1B22B9320006409B /* SyntaxKit-OSX */;
+			target = 2122A6DD1B22B9320006409B /* SyntaxKit-macOS */;
 			targetProxy = 2122A6EB1B22B9320006409B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -947,7 +947,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2122A6F41B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKit-OSX" */ = {
+		2122A6F41B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKit-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2122A6F51B22B9320006409B /* Debug */,
@@ -956,7 +956,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2122A6F71B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKitTests-OSX" */ = {
+		2122A6F71B22B9320006409B /* Build configuration list for PBXNativeTarget "SyntaxKitTests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2122A6F81B22B9320006409B /* Debug */,
