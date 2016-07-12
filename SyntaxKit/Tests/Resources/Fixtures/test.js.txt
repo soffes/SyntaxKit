@@ -1,0 +1,21 @@
+var global = "test";
+
+function foo() {
+    var a = 1;
+
+    if (a != null) {
+        bar(a);
+    }
+
+    for (var i = 0; i < 10; i++) {
+        // Comment
+    }
+}
+
+function bar(abc) {
+    var b = abc;
+
+    while (true) {
+        doSomething();
+    }
+}

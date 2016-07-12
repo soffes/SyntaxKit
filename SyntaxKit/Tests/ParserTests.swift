@@ -59,4 +59,10 @@ class ParserTests: XCTestCase {
 		let input = fixture("test.rb", "txt")
 		parser.parse(input, match: { _, _ in return })
 	}
+    
+    func testJavaScript() {
+        let parser = Parser(language: language("JavaScript"))
+        let input = fixture("test.js", "txt")
+        parser.parse(input, match: { _, _ in return })
+    }
 }
