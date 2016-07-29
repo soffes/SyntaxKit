@@ -85,6 +85,6 @@ Easy as that. This method takes an optional `baseAttributes` parameter to custom
 
 ### Custom Parsers
 
-If you want to build your own parser (for example, to generate HTML) you can subclass whichever one meets your needs. Go nuts.
+If you want to build your own parser (for example, to generate HTML) you can subclass whichever one meets your needs. Go wild.
 
 Enjoy.
